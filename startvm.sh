@@ -8,6 +8,7 @@ elif [ "${#loginString[@]}" -gt 1 ]; then
 fi
 while [ 1 ]
 do
-    az vm start --ids $(az vm list -g vps_group --query "[].id" -o tsv) --no-wait
+    az vm start --ids $(az vm list -g NetworkWatcherRG --query "[].id" -o tsv) --no-wait
+    echo "start...."
     sleep 60
 done
