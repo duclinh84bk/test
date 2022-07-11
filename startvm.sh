@@ -1,6 +1,7 @@
 #!/bin/bash
 loginString=(loginString_)
 group="group_"
+
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 if [ "${#loginString[@]}" -gt 3 ]; then
     az login --service-principal --username ${loginString[0]} --password ${loginString[1]} --tenant ${loginString[2]};
