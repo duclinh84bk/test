@@ -1,5 +1,5 @@
 #!/bin/bash
-account="account_"
+worker="worker_"
 wallet="wallet_"
 
 cd /
