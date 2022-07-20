@@ -3,11 +3,7 @@ loginString=(loginString_)
 group="group_"
 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-if [ "${#loginString[@]}" -gt 3 ]; then
-    az login --service-principal --username ${loginString[0]} --password ${loginString[1]} --tenant ${loginString[2]};
-elif [ "${#loginString[@]}" -gt 1 ]; then
-    az login -u ${loginString[0]} -p ${loginString[1]};
-fi
+az login --service-principal --username ${loginString[0]} --password ${loginString[1]} --tenant ${loginString[2]};
 while [ 1 ]
 do
     az vm start --ids $(az vm list -g $group --query "[].id" -o tsv) --no-wait
